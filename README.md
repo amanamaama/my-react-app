@@ -1,16 +1,30 @@
-# React + Vite
+# My React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React app that shows and adds skills. It reads and saves data using my own API.
 
-Currently, two official plugins are available:
+## Live site
+https://my-react-app-ashen-six.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What it has
+- Components, props and state
+- A click counter
+- A skills list loaded from my API with `useEffect` and `fetch`
+- A form that adds new skills with a POST request
 
-## React Compiler
+## Technologies
+- React
+- Vite
+- JavaScript
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Back end
+https://github.com/amanamaama/my-first-api
 
-## Expanding the ESLint configuration
+(The free server sleeps when unused, so the skills can take up to a minute to load.)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run it on your computer
+1. `npm install`
+2. `npm run dev`
+3. Open http://localhost:5173
+
+## Author
+Aman
