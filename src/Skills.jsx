@@ -35,12 +35,52 @@ function Skills() {
       });
   }
 
+  function deleteSkill(id) {
+    fetch(API + "/" + id, { method: "DELETE" })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        setSkills(data);
+      });
+  }
+
+  function editSkill(skill) {
+    let name = prompt("New name:", skill.name);
+
+    if (name === null || name === "") {
+      return;
+    }
+
+    fetch(API + "/" + skill.id, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: name })
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        setSkills(data);
+      });
+  }
+
   return (
     <div>
       <h2>My Skills</h2>
       <ul>
         {skills.map(function (skill) {
-          return <li key={skill.id}>{skill.name}</li>;
+          return (
+            <li key={skill.id}>
+              {skill.name}{" "}
+              <button onClick={function () { editSkill(skill); }}>
+                Edit
+              </button>{" "}
+              <button onClick={function () { deleteSkill(skill.id); }}>
+                Delete
+              </button>
+            </li>
+          );
         })}
       </ul>
 
